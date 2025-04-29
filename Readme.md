@@ -1,4 +1,4 @@
-# 阳光云电站爬虫
+# 阳光云电站逆向爬虫
 ## 安装依赖
 ```shell
 pip install pycryptodome

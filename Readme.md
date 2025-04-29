@@ -14,6 +14,7 @@ der_data = base64.b64decode(std_b64)
 ## 请求加密
 
 1. 在发起请求之前构造一个json请求体 data
+2. 随机生成nonce和random_key, nonce是32位随机字符串(A-Za-z0-9), random_key是 "web" + 29位随机字符串
 2. 设置请求体和headers的数据
 ```python
 nonce = random_word(32)
@@ -42,7 +43,9 @@ data['token'] = token
 data['appkey'] = "B0455FBE7AA0328DB57B59AA729F05D8"
 ```
 其中 x-access-key, appkey, sys_code都是常量
+
 3. 把data转为json然后使用Aes算法使用上面生成的random_key加密为字符串参数
+
 4. 发送请求
 
 
